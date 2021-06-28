@@ -1,0 +1,17 @@
+IDIR = ../inc/
+SDIR = ../src/
+
+CC = g++
+CFLAGS = -Wall
+
+main : main.o a.o
+	$(CC) $(CFLAGS) -o main main.o a.o
+
+main.o : 
+	$(CC) $(CFLAGS) c ../main.cpp
+
+a.o:
+	$(CC) $(CFLAGS)	-c $(SDIR)a.cpp
+
+clean:
+	rm *.o
